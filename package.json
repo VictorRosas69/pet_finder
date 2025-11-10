@@ -1,0 +1,30 @@
+{
+  "name": "pet-finder",
+  "version": "1.0.0",
+  "description": "Sistema de búsqueda y localización de mascotas perdidas",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm install --workspace=frontend && npm install --workspace=backend && npm install --workspace=shared",
+    "dev:frontend": "npm run dev --workspace=frontend",
+    "dev:backend": "npm run start:dev --workspace=backend",
+    "build:all": "npm run build --workspace=shared && npm run build --workspace=frontend && npm run build --workspace=backend",
+    "build:backend": "cd backend && npm install && npm run build",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "start:backend": "cd backend && npm run start:prod",
+    "start:frontend": "cd frontend && npm run preview",
+    "check:deploy": "node check-deploy.js"
+  },
+  "keywords": [
+    "pets",
+    "lost-pets",
+    "geolocation",
+    "pwa"
+  ],
+  "author": "",
+  "license": "MIT"
+}
